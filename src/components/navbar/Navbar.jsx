@@ -32,7 +32,7 @@ const Navbar = () => {
           })
     }
     return (
-        <div className='px-10 py-3'>
+        <div className='lg:px-24 px-10 py-3'>
             <div className="navbar bg-base-100">
                 <div className="navbar-start">
                     <div className="dropdown">
@@ -43,7 +43,7 @@ const Navbar = () => {
                             {links}
                         </ul>
                     </div>
-                    <p className="text-3xl font-bold">Journey Junction</p>
+                    <p className="lg:text-3xl text-lg font-bold">Journey Junction</p>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
@@ -52,9 +52,19 @@ const Navbar = () => {
                 </div>
                 <div className="navbar-end">
                 {
-                    user ? <button onClick={handleLogout}>log out</button> :  
-                    <><button  className="mr-5 btn btn-sm px-5 btn-accent"><Link to="/login">login</Link></button>
-                    <button  className="btn btn-sm px-5 btn-accent"><Link to="/register">Regsiter</Link></button></>
+                    user ?   <div  className=" dropdown dropdown-hover">
+                    <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar"> <div className="w-10 rounded-full">
+                      <img alt="profile" src={user.photoURL? user.photoURL : "https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"} />
+                    </div></div>
+                    <ul tabIndex={0} className="dropdown-content z-[1] menu bg-base-100 rounded-box w-24">
+                      {/* <li><a></a></li> */}
+                      {user?.displayName? user.displayName : 'no name '}
+                      <button className='btn btn-sm' onClick={handleLogout}>log out</button>
+                      
+                    </ul>
+                  </div> :  
+                    <><button  className="mr-2 lg:mr-5 btn btn-sm  btn-accent"><Link to="/login">login</Link></button>
+                    <button  className="btn btn-sm  btn-accent"><Link to="/register">Regsiter</Link></button></>
                 }
                 </div>
             </div>
