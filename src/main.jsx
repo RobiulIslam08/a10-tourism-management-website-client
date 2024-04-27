@@ -26,7 +26,9 @@ const router = createBrowserRouter([
     children: [
       {
         path: '/',
-        element: <Home></Home>
+        element: <Home></Home>,
+        loader: ()=> fetch('http://localhost:5000/addTouristsSports')
+        
       },
       {
         path: 'addTouristsSports',
@@ -50,8 +52,9 @@ const router = createBrowserRouter([
         element: <RegisterPage></RegisterPage>,
       },
       {
-        path:'details',
-        element:<Details></Details>
+        path:'/details/:_id',
+        element:<Details></Details>,
+        loader: ({params})=> fetch(`http://localhost:5000/addTouristsSports/${params._id}`)
       }
     ]
   },
