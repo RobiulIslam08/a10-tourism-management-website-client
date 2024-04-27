@@ -1,15 +1,16 @@
-import { useContext } from "react";
-import { AuthContext } from "../../providers/AuthProviders";
+
 import Slider from "../../components/slider/Slider";
+import TouristsSpots from "../../components/touristSpots/TouristsSpots";
 
 
 const Home = () => {
-    const {name}  = useContext(AuthContext)
+  
     return (
         <div>
+            
           
             <Slider></Slider>
-            home here
+            <TouristsSpots></TouristsSpots>
         </div>
     );
 };

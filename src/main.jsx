@@ -16,6 +16,7 @@ import LoginPage from './pages/loginPage/LoginPage';
 import RegisterPage from './pages/registerPage/RegisterPage';
 import ErrorPage from './pages/errorPage/ErrorPage';
 import AuthProviders from './providers/AuthProviders';
+import Details from './components/details/Details';
 
 const router = createBrowserRouter([
   {
@@ -47,6 +48,10 @@ const router = createBrowserRouter([
       {
         path: 'register',
         element: <RegisterPage></RegisterPage>,
+      },
+      {
+        path:'details',
+        element:<Details></Details>
       }
     ]
   },
