@@ -17,6 +17,9 @@ import RegisterPage from './pages/registerPage/RegisterPage';
 import ErrorPage from './pages/errorPage/ErrorPage';
 import AuthProviders from './providers/AuthProviders';
 import Details from './components/details/Details';
+import AddTouristProtected from './privetRoute/AddTouristProtected';
+import MyListProtected from './privetRoute/MyListProtected';
+import ViewDateailsProtected from './privetRoute/ViewDateailsProtected';
 
 const router = createBrowserRouter([
   {
@@ -32,15 +35,17 @@ const router = createBrowserRouter([
       },
       {
         path: 'addTouristsSports',
-        element: <AddTouristsSports></AddTouristsSports>,
+        element: <AddTouristProtected><AddTouristsSports></AddTouristsSports></AddTouristProtected>,
       },
       {
         path: 'allTouristsSports',
-        element: <AllTouristsSports></AllTouristsSports>
+        element: <AllTouristsSports></AllTouristsSports>,
+        loader: ()=> fetch('http://localhost:5000/allTouristsSports')
+
       },
       {
         path: 'mylist',
-        element: <MyList></MyList>
+        element:<MyListProtected> <MyList></MyList></MyListProtected>
       },
       {
         path: 'login',
@@ -53,7 +58,7 @@ const router = createBrowserRouter([
       },
       {
         path:'/details/:_id',
-        element:<Details></Details>,
+        element:<ViewDateailsProtected><Details></Details></ViewDateailsProtected>,
         loader: ({params})=> fetch(`http://localhost:5000/addTouristsSports/${params._id}`)
       }
     ]

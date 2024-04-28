@@ -1,10 +1,12 @@
 import { useContext } from "react";
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProviders";
 
 
 const LoginPage = () => {
+    const location = useLocation()
+    const navigate = useNavigate()
     const {
         register,
         handleSubmit,
@@ -17,6 +19,8 @@ const LoginPage = () => {
         loginUser(email,password)
         .then(()=>{
             alert('successful login')
+            navigate(location?.state? location.state: '/')
+
         })
         .catch(err =>{
             console.log(err)
@@ -27,6 +31,7 @@ const LoginPage = () => {
         signWithGoogle()
         .then(()=>{
             alert('successful google login')
+            navigate(location?.state? location.state: '/')
         })
         .catch((err)=>{
             console.log(err)
@@ -37,6 +42,7 @@ const LoginPage = () => {
         signWithGithub()
         .then(()=>{
             alert('yes github login done')
+            navigate(location?.state? location.state: '/')
         })
         .catch((err)=>{
             console.log(err)

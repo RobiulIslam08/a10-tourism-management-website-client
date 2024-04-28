@@ -1,8 +1,10 @@
 import { useState } from "react";
+
 import Swal from "sweetalert2";
 
 const AddTouristsSports = () => {
     const [country, setCountry] = useState("Bangladesh");
+   
     console.log(country)
     const handleCountryChange = (e) => {
       setCountry(e.target.value);
@@ -19,9 +21,11 @@ const AddTouristsSports = () => {
       const averageCost = form.averageCost.value;
       const description = form.description.value;
       const location = form.location.value;
+      const name = form.name.value;
+      const email = form.email.value;
     
 
-      const touristField = {country,image,spotName,visitor, travelTime,seasonality,averageCost,description,location}
+      const touristField = {name,email,country,image,spotName,visitor, travelTime,seasonality,averageCost,description,location}
       console.log(touristField)
 
       fetch('http://localhost:5000/addTouristsSports',{
@@ -52,6 +56,19 @@ const AddTouristsSports = () => {
   
     <div className="card shrink-0 xl:w-[1200px] lg:w-[960px] md:w-[670px] mx-auto shadow-xl bg-base-200">
       <form onSubmit={handleAddedTourism} className="card-body">
+      <div className="form-control">
+      <div className="form-control">
+          <label className="label">
+            <span className="label-text">Your Name</span>
+          </label>
+          <input type="text" name="name" placeholder="total visitor peryear" className="input input-bordered" required />
+        </div>
+          <label className="label">
+            <span className="label-text">Your Email </span>
+          </label>
+          <input type="email" name="email" placeholder="total visitor peryear" className="input input-bordered" required />
+        </div>
+        
         <div className="form-control">
           <label className="label">
             <span className="label-text">image URL</span>
@@ -160,8 +177,8 @@ const AddTouristsSports = () => {
             <span className="label-text">Total visitor PerYear </span>
           </label>
           <input type="text" name="visitor" placeholder="total visitor peryear" className="input input-bordered" required />
-         
         </div>
+       
         <button  type="submit" className="btn btn-accent mt-16 mb-5">Added information</button>
 
        
