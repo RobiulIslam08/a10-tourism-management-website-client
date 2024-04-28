@@ -2,7 +2,7 @@ import { Link, useLoaderData } from "react-router-dom";
 
 
 const TouristsSpots = () => {
-    const tourismSpots = useLoaderData()
+    const tourismSpots = useLoaderData().slice(0, 9)
     console.log(tourismSpots)
     return (
         <div>
@@ -11,26 +11,26 @@ const TouristsSpots = () => {
             
               {
                 tourismSpots.map(tourismSpot =>    <div key={tourismSpot._id} data-aos-duration="1000" data-aos="zoom-out-up" className="hover:shadow-2xl card h-[450px] card-compact lg:w-[320] xl:w-96 md:w-[300px] w-[250px] mx-auto bg-base-100 shadow-xl">
-                <figure><img className="w-full h-96" src={tourismSpot.image} alt="Shoes" /></figure>
+                <figure><img className="w-full h-96" src={tourismSpot.image} alt="img" /></figure>
                 <div className="card-body">
                     <h2 className="card-title">{tourismSpot.spotName}</h2>
                     <div className="space-y-2 text-gray-500 font-light">
                        <div className="flex  justify-between">
                        <p>average cost :</p>
-                        <span>$2000</span>
+                        <span>${tourismSpot.averageCost}</span>
                        </div>
                      
                         <div className="flex w-[100%] justify-between items-center ">
-                            <p >Seasonality :</p>
-                            <span className=" border border-green-400 p-2 rounded-lg">winter</span>
+                            <p >Seasonality : </p>
+                            <span className=" border border-green-400 p-2 rounded-lg">{tourismSpot.seasonality}</span>
                         </div>
                         <div className="flex">
                             <p>Total Visitors PerYear :</p>
-                            <span>5000</span>
+                            <span>{tourismSpot.visitor}</span>
                         </div>
                         <div className="flex">
                             <p>Travel Time :</p>
-                            <span>7 days</span>
+                            <span>{tourismSpot.travelTime} days</span>
                         </div>
                     </div>
                     <Link to={`/details/${tourismSpot._id}`} className="btn btn-accent">view details</Link>

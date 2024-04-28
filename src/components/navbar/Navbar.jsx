@@ -2,6 +2,7 @@
 import { useContext } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { AuthContext } from '../../providers/AuthProviders';
+import { toast } from 'react-toastify';
 
 const Navbar = () => {
     const {user,logout} = useContext(AuthContext)
@@ -25,7 +26,7 @@ const Navbar = () => {
     const handleLogout = () =>{
         logout()
         .then( ()=>{ 
-            alert('log out')
+            toast("Successful logout"); 
           })
           .catch(error =>{
             console.log('error khaiso logout ' ,error)

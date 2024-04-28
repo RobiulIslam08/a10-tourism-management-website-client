@@ -30,7 +30,7 @@ const router = createBrowserRouter([
       {
         path: '/',
         element: <Home></Home>,
-        loader: ()=> fetch('http://localhost:5000/addTouristsSports')
+        loader: ()=> fetch('https://a10-tourism-management-website-server.vercel.app/addTouristsSports')
         
       },
       {
@@ -40,7 +40,7 @@ const router = createBrowserRouter([
       {
         path: 'allTouristsSports',
         element: <AllTouristsSports></AllTouristsSports>,
-        loader: ()=> fetch('http://localhost:5000/allTouristsSports')
+        loader: ()=> fetch('https://a10-tourism-management-website-server.vercel.app/allTouristsSports')
 
       },
       {
@@ -59,7 +59,7 @@ const router = createBrowserRouter([
       {
         path:'/details/:_id',
         element:<ViewDateailsProtected><Details></Details></ViewDateailsProtected>,
-        loader: ({params})=> fetch(`http://localhost:5000/addTouristsSports/${params._id}`)
+        loader: ({params})=> fetch(`https://a10-tourism-management-website-server.vercel.app/addTouristsSports/${params._id}`)
       }
     ]
   },

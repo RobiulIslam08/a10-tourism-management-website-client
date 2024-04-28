@@ -1,7 +1,9 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProviders";
+import { toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 
 const LoginPage = () => {
@@ -13,25 +15,30 @@ const LoginPage = () => {
         // formState: { errors },
       } = useForm()
       const {loginUser, signWithGoogle,signWithGithub} = useContext(AuthContext)
+      const [loginError, setLoginError] = useState("")
 
       const onSubmit = (data)=>{
+        setLoginError("")
         const {email, password} = data
         loginUser(email,password)
         .then(()=>{
-            alert('successful login')
             navigate(location?.state? location.state: '/')
+            toast("Successful Login"); 
 
         })
         .catch(err =>{
             console.log(err)
+            setLoginError("Invalid email or password."); // Set login error message
+            toast.error("please valid information")
         })
       }
 
       const handleGoogleLogin = ()=>{
         signWithGoogle()
         .then(()=>{
-            alert('successful google login')
+           
             navigate(location?.state? location.state: '/')
+            toast("Successful Login"); 
         })
         .catch((err)=>{
             console.log(err)
@@ -41,13 +48,14 @@ const LoginPage = () => {
       const handleGithubLogin = ()=>{
         signWithGithub()
         .then(()=>{
-            alert('yes github login done')
+         
             navigate(location?.state? location.state: '/')
+            toast("Successful Login"); 
         })
         .catch((err)=>{
             console.log(err)
         })
-      }
+      } 
     return (
         <div>
             <div className="w-full max-w-md mx-auto p-8 space-y-3 rounded-xl dark:bg-gray-50 dark:text-gray-800">
@@ -63,6 +71,7 @@ const LoginPage = () => {
                         <div className="flex justify-end text-xs dark:text-gray-600">
                             <a rel="noopener noreferrer" href="#">Forgot Password?</a>
                         </div>
+                        {loginError && <p className="text-red-500">{loginError}</p>} {/* Display login error message */}
                     </div>
                     <button className="block w-full p-3 text-center rounded-sm dark:text-gray-50 dark:bg-violet-600">Sign in</button>
                 </form>

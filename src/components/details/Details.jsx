@@ -24,21 +24,29 @@ const Details = () => {
         <table  data-aos="fade-right" className=" border border-slate-500 w-full text-gray-600">
 
           <tbody>
+          <tr >
+              <td className="border border-slate-700 font-semibold">Country Name</td>
+              <td className="border border-slate-700 ">{product.country}</td>
+            </tr>
             <tr >
-              <td className="border border-slate-700 font-semibold">Price</td>
-              <td className="border border-slate-700 ">{product.price}</td>
+              <td className="border border-slate-700 font-semibold">Location</td>
+              <td className="border border-slate-700 ">${product.location}</td>
+            </tr>
+            <tr >
+              <td className="border border-slate-700 font-semibold">Average Cost</td>
+              <td className="border border-slate-700 ">${product.averageCost}</td>
             </tr>
             <tr>
-              <td className="border border-slate-700 font-semibold">status</td>
-              <td className="border border-slate-700 ">{product.averageCost}</td>
-            </tr>
-            <tr>
-              <td className="border border-slate-700 font-semibold">area</td>
+              <td className="border border-slate-700 font-semibold">Seasionality</td>
               <td className="border border-slate-700 ">{product.seasonality}</td>
             </tr>
             <tr>
-              <td className="border border-slate-700 font-semibold">location</td>
-              <td className="border border-slate-700 ">{product.location}</td>
+              <td className="border border-slate-700 font-semibold">Travel Time</td>
+              <td className="border border-slate-700 ">{product.travelTime} days</td>
+            </tr>
+            <tr >
+              <td className="border border-slate-700 font-semibold">Visitor</td>
+              <td className="border border-slate-700 ">{product.visitor} people</td>
             </tr>
             
           </tbody>

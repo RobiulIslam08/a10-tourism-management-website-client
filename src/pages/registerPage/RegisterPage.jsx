@@ -1,12 +1,15 @@
 import { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProviders";
+import { toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 
 const RegisterPage = () => {
-    const {createUser} = useContext(AuthContext)
+    const {createUser,updateUserProfile} = useContext(AuthContext)
+    const navigate = useNavigate()
     const [showPass, setShowPass] = useState(false)
     const passwordLengthPattern = /.{6,}/;
     const passwordLowercasePattern = /[a-z]/;
@@ -17,11 +20,16 @@ const RegisterPage = () => {
     } = useForm()
 
     const onSubmit = (data)=>{ 
-        const { email, password } = data;
+        const { email, password,photo, name } = data;
         createUser(email, password)
         .then(result => {
-            alert('yes create your acount')
-            console.log(result.user)
+            updateUserProfile(name,photo)
+            .then(()=>{
+                toast("Successful Register"); 
+                navigate("/")
+                console.log(result.user)
+            })
+           
         })
         .catch(err =>{
             console.log(err)

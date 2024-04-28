@@ -1,9 +1,13 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 
 import Swal from "sweetalert2";
+import { AuthContext } from "../../providers/AuthProviders";
 
 const AddTouristsSports = () => {
     const [country, setCountry] = useState("Bangladesh");
+    const {user} = useContext(AuthContext);
+    console.log(user.email, user.displayName
+    )
    
     console.log(country)
     const handleCountryChange = (e) => {
@@ -28,7 +32,7 @@ const AddTouristsSports = () => {
       const touristField = {name,email,country,image,spotName,visitor, travelTime,seasonality,averageCost,description,location}
       console.log(touristField)
 
-      fetch('http://localhost:5000/addTouristsSports',{
+      fetch('https://a10-tourism-management-website-server.vercel.app/addTouristsSports',{
         method: 'POST',
         headers: {
           'content-type' : "application/json"
@@ -61,12 +65,13 @@ const AddTouristsSports = () => {
           <label className="label">
             <span className="label-text">Your Name</span>
           </label>
-          <input type="text" name="name" placeholder="total visitor peryear" className="input input-bordered" required />
+          <input type="text" disabled defaultValue={user.displayName
+} name="name" placeholder="total visitor peryear" className="input input-bordered" required />
         </div>
           <label className="label">
             <span className="label-text">Your Email </span>
           </label>
-          <input type="email" name="email" placeholder="total visitor peryear" className="input input-bordered" required />
+          <input type="email" defaultValue={user.email} disabled name="email" placeholder="total visitor peryear" className="input input-bordered" required />
         </div>
         
         <div className="form-control">
