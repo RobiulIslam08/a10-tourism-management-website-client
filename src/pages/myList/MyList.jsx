@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../providers/AuthProviders";
 import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
 
 
 
@@ -8,6 +9,7 @@ import { Link } from "react-router-dom";
 const MyList = () => {
     const {user} = useContext(AuthContext)
     const [myitems, setMYItems] = useState([])
+    const [control, setControl] =useState(false)
     useEffect(()=>{
         fetch(`http://localhost:5000/mylist/${user.email}`)
         .then((res)=>res.json())
@@ -16,7 +18,39 @@ const MyList = () => {
             setMYItems(data)
            
         })
-    },[user])
+    },[user,control])
+    const handleDelete = (_id)=>{
+   
+        Swal.fire({
+            title: "Are you sure?",
+            text: "You won't be able to revert this!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, delete it!"
+          }).then((result) => {
+            if (result.isConfirmed) {
+       
+                fetch(`http://localhost:5000/mylist/${_id}`,{
+                    method: 'DELETE'
+                })
+                .then(res => res.json())
+                .then(data => {
+                    console.log('deleted')
+                    if(data.deletedCount>0){
+
+                        Swal.fire({
+                            title: "Deleted!",
+                            text: "Your file has been deleted.",
+                            icon: "success"
+                          });
+                          setControl(!control)
+                    }
+                })
+            }
+          });
+    }
     return (
         <div>
             <h1 className="lg:text-3xl text-center my-[120px] md:text-2xl text-xl font-bold">My List  </h1>
@@ -47,7 +81,7 @@ const MyList = () => {
                 </div>
                <div className="flex justify-between">
                <button className="btn btn-success ">Update</button>
-                <button className="btn btn-warning">Delete</button>
+                <button onClick={()=>handleDelete(myitem._id)} className="btn btn-warning">Delete</button>
                </div>
                 <Link to={`/details/${myitem._id}`}  className="btn btn-accent">view details</Link>
                 {/* to={`/details/${tourismSpot._id}`}  */}
