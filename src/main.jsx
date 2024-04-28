@@ -20,6 +20,7 @@ import Details from './components/details/Details';
 import AddTouristProtected from './privetRoute/AddTouristProtected';
 import MyListProtected from './privetRoute/MyListProtected';
 import ViewDateailsProtected from './privetRoute/ViewDateailsProtected';
+import UpdatePage from './pages/updatePages/UpdatePage';
 
 const router = createBrowserRouter([
   {
@@ -60,6 +61,12 @@ const router = createBrowserRouter([
         path:'/details/:_id',
         element:<ViewDateailsProtected><Details></Details></ViewDateailsProtected>,
         loader: ({params})=> fetch(`https://a10-tourism-management-website-server.vercel.app/addTouristsSports/${params._id}`)
+      },
+      {
+        path:'/update/:_id',
+        element:<UpdatePage></UpdatePage>,
+        loader: ({params})=> fetch(`https://a10-tourism-management-website-server.vercel.app/addTouristsSports/${params._id}`)
+
       }
     ]
   },

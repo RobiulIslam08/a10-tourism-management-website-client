@@ -80,7 +80,7 @@ const MyList = () => {
                     </div>
                 </div>
                <div className="flex justify-between">
-               <button className="btn btn-success ">Update</button>
+               <Link to={`/update/${myitem._id}`}  className="btn btn-accent">Update</Link>
                 <button onClick={()=>handleDelete(myitem._id)} className="btn btn-warning">Delete</button>
                </div>
                 <Link to={`/details/${myitem._id}`}  className="btn btn-accent">view details</Link>
