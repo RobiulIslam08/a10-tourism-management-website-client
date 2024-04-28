@@ -2,14 +2,16 @@ import Swal from "sweetalert2";
 
 
 import {  useState } from "react";
+import { useLoaderData } from "react-router-dom";
 const UpdatePage = () => {
+    const lodedUser = useLoaderData()
     const [country, setCountry] = useState("Bangladesh");
     // const {user} = useContext(AuthContext);
     const handleCountryChange = (e) => {
         setCountry(e.target.value);
       };
     
-    const handleAddedTourism = (e) =>{
+    const handleUpdateTourism = (e) =>{
         e.preventDefault()
         const form = e.target
         const image = form.image.value;
@@ -21,25 +23,25 @@ const UpdatePage = () => {
         const description = form.description.value;
         const location = form.location.value;
         const name = form.name.value;
-        const email = form.email.value;
+        
       
   
-        const touristField = {name,country,email,image,spotName,visitor, travelTime,seasonality,averageCost,description,location}
-        console.log(touristField)
+        const updatedTouristField = {name,country,image,spotName,visitor, travelTime,seasonality,averageCost,description,location}
+        console.log(updatedTouristField)
   
-        fetch('https://a10-tourism-management-website-server.vercel.app/addTouristsSports',{
-          method: 'POST',
+        fetch(`http://localhost:5000/mylist/${lodedUser._id}`,{
+          method: 'PUT',
           headers: {
             'content-type' : "application/json"
           },
-          body: JSON.stringify(touristField)
+          body: JSON.stringify(updatedTouristField)
         })
         .then(res => res.json())
         .then(data => {
          console.log(data)
-          if(data.insertedId){
+          if(data.modifiedCount>0){
             Swal.fire({
-              title: 'added successful!',
+              title: 'Update successful!',
               text: 'your added data successful',
               icon: 'success',
               confirmButtonText: 'ok'
@@ -53,7 +55,7 @@ const UpdatePage = () => {
             <div className="hero  ">
                 <div className="hero-content ">
                     <div className="card shrink-0 xl:w-[1200px] lg:w-[960px] md:w-[670px] mx-auto shadow-xl bg-base-200">
-                        <form onSubmit={handleAddedTourism} className="card-body">
+                        <form onSubmit={handleUpdateTourism} className="card-body">
                            
 
                             <div className="form-control">
