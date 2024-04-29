@@ -160,7 +160,7 @@ const AddTouristsSports = () => {
           <label className="label">
             <span className="label-text">Average Cost </span>
           </label>
-          <input type="text" name="averageCost" placeholder="average cost" className="input input-bordered" required />
+          <input type="text" name="averageCost" placeholder="average cost(do not use any sign)" className="input input-bordered" required />
          
         </div>
         <div className="form-control">

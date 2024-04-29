@@ -61,13 +61,13 @@ const UpdatePage = () => {
                                 <label className="label">
                                     <span className="label-text">image URL</span>
                                 </label>
-                                <input type="text" placeholder="image URL" name="image" className="input input-bordered" required />
+                                <input defaultValue={lodedUser.image} type="text" placeholder="image URL" name="image" className="input input-bordered" required />
                             </div>
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Tourist Sport Name</span>
                                 </label>
-                                <input type="text" name="spotName" placeholder="Tourist Sport Name" className="input input-bordered" required />
+                                <input defaultValue={lodedUser.spotName} type="text" name="spotName" placeholder="Tourist Sport Name" className="input input-bordered" required />
 
                             </div>
 
@@ -75,6 +75,7 @@ const UpdatePage = () => {
                                 <label className="label"><span className="label-text">Country Name</span></label>
                                 <div className="relative mt-2 rounded-md shadow-sm">
                                     <input
+                                    defaultValue={lodedUser.country}
                                         type="text"
                                         placeholder="country name"
                                         className="input input-bordered w-full"
@@ -110,42 +111,42 @@ const UpdatePage = () => {
                                 <label className="label">
                                     <span className="label-text">Location</span>
                                 </label>
-                                <input type="text" name="location" placeholder="location" className="input input-bordered" required />
+                                <input defaultValue={lodedUser.location} type="text" name="location" placeholder="location" className="input input-bordered" required />
 
                             </div>
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Short Description</span>
                                 </label>
-                                <input type="text" name="description" placeholder="short description" className="input input-bordered" required />
+                                <input defaultValue={lodedUser.description} type="text" name="description" placeholder="short description" className="input input-bordered" required />
 
                             </div>
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Average Cost </span>
                                 </label>
-                                <input type="text" name="averageCost" placeholder="average cost" className="input input-bordered" required />
+                                <input defaultValue={lodedUser.averageCost} type="text" name="averageCost" placeholder="average cost" className="input input-bordered" required />
 
                             </div>
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Seasonality  </span>
                                 </label>
-                                <input type="text" name="seasonality" placeholder=" summer or winter" className="input input-bordered" required />
+                                <input defaultValue={lodedUser.seasonality} type="text" name="seasonality" placeholder=" summer or winter" className="input input-bordered" required />
 
                             </div>
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Travel Time </span>
                                 </label>
-                                <input type="text" name="travelTime" placeholder="7 or 15" className="input input-bordered" required />
+                                <input defaultValue={lodedUser.travelTime} type="text" name="travelTime" placeholder="7 or 15" className="input input-bordered" required />
 
                             </div>
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Total visitor PerYear </span>
                                 </label>
-                                <input type="text" name="visitor" placeholder="total visitor peryear" className="input input-bordered" required />
+                                <input defaultValue={lodedUser.visitor} type="text" name="visitor" placeholder="total visitor peryear" className="input input-bordered" required />
                             </div>
 
                             <button type="submit" className="btn btn-accent mt-16 mb-5">Added information</button>
