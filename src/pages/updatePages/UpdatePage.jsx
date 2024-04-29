@@ -44,7 +44,6 @@ const UpdatePage = () => {
               title: 'Update successful!',
               text: 'your added data successful',
               icon: 'success',
-              confirmButtonText: 'ok'
             })
           }
         })
