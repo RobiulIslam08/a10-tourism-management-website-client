@@ -28,8 +28,9 @@ const UpdatePage = () => {
   
         const updatedTouristField = {name,country,image,spotName,visitor, travelTime,seasonality,averageCost,description,location}
         console.log(updatedTouristField)
-  
-        fetch(`http://localhost:5000/mylist/${lodedUser._id}`,{
+//   https://a10-tourism-management-website-server.vercel.app/
+// https://a10-tourism-management-website-server.vercel.app
+        fetch(`https://a10-tourism-management-website-server.vercel.app/mylist/${lodedUser._id}`,{
           method: 'PUT',
           headers: {
             'content-type' : "application/json"
