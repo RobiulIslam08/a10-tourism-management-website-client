@@ -2,11 +2,11 @@ import { Link, useLoaderData } from "react-router-dom";
 
 
 const TouristsSpots = () => {
-    const tourismSpots = useLoaderData().slice(0, 9)
+    const tourismSpots = useLoaderData().slice(0, 6)
     console.log(tourismSpots)
     return (
         <div>
-            <h1 className="lg:text-3xl text-center my-[120px] md:text-2xl text-xl font-bold">Tourists Spots Section </h1>
+            <h1 className="lg:text-3xl text-center my-[120px] md:text-2xl text-xl font-bold">Tourists Spots </h1>
             <div className=" grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-6">
             
               {

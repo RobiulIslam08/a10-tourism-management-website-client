@@ -16,7 +16,9 @@ const AddTouristsSports = () => {
 
     const handleAddedTourism = (e) =>{
       e.preventDefault()
+      
       const form = e.target
+     form.reset()
       const image = form.image.value;
       const spotName = form.spotName.value;
       const visitor = form.visitor.value;
