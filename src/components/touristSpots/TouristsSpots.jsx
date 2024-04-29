@@ -17,7 +17,7 @@ const TouristsSpots = () => {
                     <div className="space-y-2 text-gray-500 font-light">
                        <div className="flex  justify-between">
                        <p>average cost :</p>
-                        <span>${tourismSpot.averageCost}</span>
+                        <span>{tourismSpot.averageCost}</span>
                        </div>
                      
                         <div className="flex w-[100%] justify-between items-center ">

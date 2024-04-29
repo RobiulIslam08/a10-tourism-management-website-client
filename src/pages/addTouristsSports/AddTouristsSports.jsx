@@ -129,10 +129,10 @@ const AddTouristsSports = () => {
           >
             <option value="Bangladesh">Bangladesh</option>
             <option value="Thailand">Thailand</option>
-            <option value="India">Cambodia</option>
-            <option value="India">Vietnam</option>
-            <option value="India">Malaysia </option>
-            <option value="India">Indonesia </option>
+            <option value="Cambodia">Cambodia</option>
+            <option value="Vietnam">Vietnam</option>
+            <option value="Malaysia">Malaysia </option>
+            <option value="Indonesia">Indonesia </option>
           </select>
         </div>
       </div>

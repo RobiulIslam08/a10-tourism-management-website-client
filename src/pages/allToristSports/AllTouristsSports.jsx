@@ -1,13 +1,31 @@
+import { useState } from "react";
 import { Link, useLoaderData } from "react-router-dom";
 
 
 const AllTouristsSports = () => {
     const allTourists = useLoaderData()
+    const [sortData , setSortData] = useState([allTourists])
     console.log(allTourists)
+
+    function sortByAverageCost(sorting){
+        if(sorting == 'averageCost'){
+          const sortedData = allTourists.sort((a, b) => b.averageCost - a.averageCost)
+          setSortData(sortedData)
+         
+        }
+      }
     return (
         <div>
            <div>
             <h1 className="lg:text-3xl text-center my-[120px] md:text-2xl text-xl font-bold">Tourists Spots Section </h1>
+            <details className="dropdown ">
+  <summary className="m-1 bg-green-400 px-10 hover:bg-green-300 btn">Sort By</summary>
+  <ul className="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-52">
+    <li onClick={()=>sortByAverageCost('averageCost')}><a>Average Cost</a></li>
+   
+  </ul>
+</details>
+ {/* const updatedTouristField = {name,country,image,spotName,visitor, travelTime,seasonality,averageCost,description,location} */}
             <div className=" grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-6">
             
               {
@@ -18,20 +36,20 @@ const AllTouristsSports = () => {
                     <div className="space-y-2 text-gray-500 font-light">
                        <div className="flex  justify-between">
                        <p>average cost :</p>
-                        <span>$2000</span>
+                        <span>{allTourist.averageCost}</span>
                        </div>
                      
                         <div className="flex w-[100%] justify-between items-center ">
                             <p >Seasonality :</p>
-                            <span className=" border border-green-400 p-2 rounded-lg">winter</span>
+                            <span className=" border border-green-400 p-2 rounded-lg">{allTourist.seasonality}</span>
                         </div>
                         <div className="flex">
                             <p>Total Visitors PerYear :</p>
-                            <span>5000</span>
+                            <span>{allTourist.visitor}</span>
                         </div>
                         <div className="flex">
                             <p>Travel Time :</p>
-                            <span>7 days</span>
+                            <span>{allTourist.travelTime} days</span>
                         </div>
                     </div>
                     <Link to={`/details/${allTourist._id}`} className="btn btn-accent">view details</Link>

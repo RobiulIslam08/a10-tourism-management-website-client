@@ -57,13 +57,13 @@ const MyList = () => {
             <div className=" grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-6">
            {
             myitems.map(myitem =>  <div  key={myitem._id} data-aos-duration="1000" data-aos="zoom-out-up" className="hover:shadow-2xl card h-[450px] card-compact lg:w-[320] xl:w-96 md:w-[300px] w-[250px] mx-auto bg-base-100 shadow-xl">
-            <figure><img className="w-full h-96" src="#" alt="Shoes" /></figure>
+            <figure><img src={myitem.image} className="w-full h-96"  alt="Shoes" /></figure>
             <div className="card-body">
                 <h2 className="card-title">{myitem.spotName}</h2>
                 <div className="space-y-2 text-gray-500 font-light">
                    <div className="flex  justify-between">
                    <p>average cost :</p>
-                    <span>${myitem.averageCost}</span>
+                    <span>{myitem.averageCost}</span>
                    </div>
                  
                     <div className="flex w-[100%] justify-between items-center ">
