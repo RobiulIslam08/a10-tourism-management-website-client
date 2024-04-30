@@ -2,6 +2,7 @@
 import { useLoaderData } from "react-router-dom";
 import AOS from 'aos';
 import 'aos/dist/aos.css'; // You can also use <link> for styles
+import { Typewriter } from "react-simple-typewriter";
 // ..
 AOS.init();
 
@@ -16,7 +17,26 @@ const Details = () => {
         <img src={product.image} className='w-full h-full object-cover absolute' alt={product.estate_title || 'Product Image'} />
         <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent"></div>
 
-        <p   className='relative text-2xl flex justify-center items-center top-14 font-semibold text-white'>{product.spotName}</p>
+        <p   className='relative text-2xl flex justify-center items-center top-14 font-semibold text-white'>
+        <h1  >
+        {' '}
+        <span style={{ color: '', fontWeight: 'bold' }}>
+          {/* Style will be inherited from the parent element */}
+          <Typewriter
+
+            words={[product.spotName]}
+            loop={false}
+            cursor
+            cursorStyle='_'
+            typeSpeed={90}
+            deleteSpeed={30}
+            delaySpeed={1000}
+            // onLoopDone={handleDone}
+            // onType={handleType}
+          />
+        </span>
+      </h1>
+        </p>
       </div>
       <h1  data-aos="fade-right" className="lg:text-3xl  text-xl font-bold my-5 lg:my-9">{product.visitors}</h1>
       <p  data-aos="fade-right" className="text-gray-600 mb-5 lg:mb-8">{product.description} this product is very new and you can buy it. {product.description}</p>

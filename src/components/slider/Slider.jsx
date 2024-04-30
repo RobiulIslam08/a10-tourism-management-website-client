@@ -11,6 +11,7 @@ import 'swiper/css/navigation';
 
 // import required modules
 import { Pagination, Navigation,Autoplay } from 'swiper/modules';
+import { Typewriter } from 'react-simple-typewriter';
 
 const Slider = () => {
   return (
@@ -26,11 +27,7 @@ const Slider = () => {
         }}
         navigation={true}
         modules={[Pagination, Navigation,Autoplay]}
-        autoplay={
-          {
-            delay:2000
-          }
-        }
+    
         className="mySwiper h-[200px] mt-20 md:h-[400px] lg:h-[500px]"
       >
         <SwiperSlide>
@@ -45,7 +42,24 @@ const Slider = () => {
             <div className='absolute inset-0 bg-gradient-to-t from-black to-transparent flex justify-center items-center md:h-[400px]  h-[200px] lg:h-[500px] text-white font-bold text-[22px] lg:text-3xl'> 
             <div className='flex justify-center items-center flex-col lg:gap-3 w-1/2'>
                 <p className='text-purple-500'>Chiang Mai </p>
-        <p className='text-center text-sm lg:text-base'>Ancient temples, lush jungles, and vibrant markets enchant visitors.</p>
+        <p className='text-center text-sm lg:text-base'> <h1  >
+        Our{' '}
+        <span style={{ color: '', fontWeight: 'bold' }}>
+          {/* Style will be inherited from the parent element */}
+          <Typewriter
+
+            words={['Ancient temples, lush jungles, and vibrant markets enchant visitors.']}
+            loop={false}
+            cursor
+            cursorStyle='_'
+            typeSpeed={20}
+            deleteSpeed={30}
+            delaySpeed={1000}
+            // onLoopDone={handleDone}
+            // onType={handleType}
+          />
+        </span>
+      </h1></p>
         
               </div>
             </div>
@@ -65,7 +79,26 @@ const Slider = () => {
             
               <div className='flex justify-center items-center flex-col lg:gap-3 w-1/2'>
                 <p className='text-purple-500'>  Bandarban </p>
-        <p className='text-center text-sm lg:text-base'>Verdant hills, tribal culture, and serene landscapes embrace adventurers.</p>
+        <p className='text-center text-sm lg:text-base'>
+        <h1  >
+        {' '}
+        <span style={{ color: '', fontWeight: 'bold' }}>
+          {/* Style will be inherited from the parent element */}
+          <Typewriter
+
+            words={['Verdant hills, tribal culture, and serene landscapes embrace adventurers.']}
+            loop={false}
+            cursor
+            cursorStyle='_'
+            typeSpeed={20}
+            deleteSpeed={30}
+            delaySpeed={1000}
+            // onLoopDone={handleDone}
+            // onType={handleType}
+          />
+        </span>
+      </h1>
+        </p>
         
               </div>
               </div>
@@ -83,7 +116,26 @@ const Slider = () => {
             <div className='absolute inset-0 bg-gradient-to-t from-black to-transparent  flex justify-center items-center md:h-[400px]  h-[200px] lg:h-[500px] text-white font-bold text-[22px] lg:text-3xl'>
               <div className='flex justify-center items-center flex-col lg:gap-3 w-1/2'>
                 <p className='text-purple-500'>Langkawi</p>
-        <p className='text-center text-sm lg:text-base'>Endless golden sands meet vibrant culture by the sea.</p>
+        <p className='text-center text-sm lg:text-base'>
+        <h1  >
+        {' '}
+        <span style={{ color: '', fontWeight: 'bold' }}>
+          {/* Style will be inherited from the parent element */}
+          <Typewriter
+
+            words={['Endless golden sands meet vibrant culture by the sea.']}
+            loop={false}
+            cursor
+            cursorStyle='_'
+            typeSpeed={20}
+            deleteSpeed={30}
+            delaySpeed={1000}
+            // onLoopDone={handleDone}
+            // onType={handleType}
+          />
+        </span>
+      </h1>
+        </p>
         
               </div>
               </div>
@@ -101,7 +153,26 @@ const Slider = () => {
             />
             <div className='absolute inset-0 bg-gradient-to-t from-black to-transparent  flex justify-center items-center md:h-[400px]  h-[200px] lg:h-[500px] text-white font-bold text-[22px] lg:text-3xl'><div className='flex justify-center items-center flex-col lg:gap-3 w-1/2'>
                 <p className='text-purple-500'>  Cox's Bajar </p>
-        <p className='text-center text-sm lg:text-base'>Majestic beaches, bustling markets, and rich cultural heritage await.</p>
+        <p className='text-center text-sm lg:text-base'>
+        <h1  >
+        Our{' '}
+        <span style={{ color: '', fontWeight: 'bold' }}>
+          {/* Style will be inherited from the parent element */}
+          <Typewriter
+
+            words={['Majestic beaches, bustling markets, and rich cultural heritage await.']}
+            loop={false}
+            cursor
+            cursorStyle='_'
+            typeSpeed={20}
+            deleteSpeed={30}
+            delaySpeed={1000}
+            // onLoopDone={handleDone}
+            // onType={handleType}
+          />
+        </span>
+      </h1>
+        </p>
         
               </div></div>
 

@@ -69,7 +69,7 @@ const MyList = () => {
                </th> */}
                <th>Spot and country name</th>
                <th>travel time and average cost</th>
-               <th>update and delete</th>
+               <th>update or delete</th>
                <th></th>
              </tr>
            </thead>

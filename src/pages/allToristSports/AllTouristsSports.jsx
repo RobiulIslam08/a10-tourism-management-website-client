@@ -24,7 +24,7 @@ const AllTouristsSports = () => {
         <details className="dropdown ">
   <summary className="m-1 bg-green-600 px-10 hover:bg-green-700 text-white btn">Sort By</summary>
   <ul className="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-52">
-    <li className="dark:hover:bg-[#635353]  dark:text-white rounded-xl" onClick={sortByAverageCost}><a>Average Cost</a></li>
+    <li className=" rounded-xl" onClick={sortByAverageCost}><a>Average Cost</a></li>
    
   </ul>
 </details>

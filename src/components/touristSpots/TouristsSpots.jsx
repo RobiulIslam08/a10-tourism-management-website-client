@@ -1,12 +1,34 @@
 import { Link, useLoaderData } from "react-router-dom";
-
+import { Typewriter } from "react-simple-typewriter";
+import { Fade } from "react-awesome-reveal";
 
 const TouristsSpots = () => {
     const tourismSpots = useLoaderData().slice(0, 6)
     console.log(tourismSpots)
     return (
         <div>
-            <h1 className="lg:text-3xl text-center my-[120px] md:text-2xl text-xl font-bold">Tourists Spots </h1>
+            <Fade>
+            <h1  className="lg:text-3xl text-center my-[120px] md:text-2xl text-xl font-bold" >
+        Our{' '}
+        <span style={{ color: '', fontWeight: 'bold' }}>
+          {/* Style will be inherited from the parent element */}
+          <Typewriter
+
+            words={['Tourists Sports']}
+            loop={false}
+            cursor
+            cursorStyle='_'
+            typeSpeed={30}
+            deleteSpeed={40}
+            delaySpeed={1000}
+            // onLoopDone={handleDone}
+            // onType={handleType}
+          />
+        </span>
+      </h1>
+</Fade>
+            {/* <h1 className="lg:text-3xl text-center my-[120px] md:text-2xl text-xl font-bold">Tourists Spots </h1> */}
+     
             <div className=" grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-6">
             
               {

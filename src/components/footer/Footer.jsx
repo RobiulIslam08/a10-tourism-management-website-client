@@ -9,7 +9,8 @@ const Footer = () => {
                     <p className="font-bold">
                         Travel Hero Ltd. <br />Providing reliable  since 1992
                     </p>
-                    <p>contact: journeyjunction@gmail.com</p>
+                    <p>Email: journeyjunction@gmail.com</p>
+                    <p>Phone: 0132300000</p>
                     <p>Copyright © 2024 - All right reserved</p>
                 </aside>
                 <nav>
