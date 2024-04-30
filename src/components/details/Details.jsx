@@ -3,6 +3,7 @@ import { useLoaderData } from "react-router-dom";
 import AOS from 'aos';
 import 'aos/dist/aos.css'; // You can also use <link> for styles
 import { Typewriter } from "react-simple-typewriter";
+import { Helmet } from "react-helmet-async";
 // ..
 AOS.init();
 
@@ -11,7 +12,11 @@ const Details = () => {
 
   const product = useLoaderData()
   return (
+    
     <div className='mb-8 lg:mb-20'>
+              <Helmet>
+        <title>Details Page</title>
+    </Helmet>
       {/* <img src={product.image} className='w-full  h-[300px]' alt="" /> */}
       <div className="relative w-full h-[300px]">
         <img src={product.image} className='w-full h-full object-cover absolute' alt={product.estate_title || 'Product Image'} />

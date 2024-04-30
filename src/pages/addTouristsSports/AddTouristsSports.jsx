@@ -2,6 +2,7 @@ import { useContext, useState } from "react";
 
 import Swal from "sweetalert2";
 import { AuthContext } from "../../providers/AuthProviders";
+import { Helmet } from "react-helmet-async";
 
 const AddTouristsSports = () => {
     const [country, setCountry] = useState("Bangladesh");
@@ -56,6 +57,9 @@ const AddTouristsSports = () => {
     }
     return (
         <div>
+                  <Helmet>
+        <title>Add Tourists</title>
+    </Helmet>
             <h1 className="lg:text-3xl text-center my-[120px]  md:text-2xl text-xl font-bold">Add Tourists Spots</h1>
             <div className="hero  ">
   <div className="hero-content ">

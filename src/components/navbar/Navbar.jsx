@@ -25,16 +25,16 @@ const Navbar = () => {
     const links = <>
         <div className="space-x-9">
             <NavLink className={({ isActive }) =>
-                isActive ? "font-bold text-primary" : "font-semibold"
+                isActive ? "font-bold text-primary border-b-4 border-purple-500" : "font-semibold"
             } to="/">Home</NavLink>
             <NavLink className={({ isActive }) =>
-                isActive ? "font-bold text-primary" : "font-semibold"
+                isActive ? "font-bold text-primary border-b-4 border-purple-500" : "font-semibold"
             } to="/allTouristsSports">All Tourists Sports</NavLink>
             <NavLink className={({ isActive }) =>
-                isActive ? "font-bold text-primary" : "font-semibold"
+                isActive ? "font-bold text-primary border-b-4 border-purple-500" : "font-semibold"
             } to="/addTouristsSports">Add Tourists Sports</NavLink>
             <NavLink className={({ isActive }) =>
-                isActive ? "font-bold text-primary" : "font-semibold"
+                isActive ? "font-bold text-primary border-b-4 border-purple-500" : "font-semibold"
             } to="/mylist">My List</NavLink>
         </div>
     </>

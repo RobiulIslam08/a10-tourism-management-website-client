@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../providers/AuthProviders";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet-async";
 
 
 
@@ -53,7 +54,11 @@ const MyList = () => {
           });
     }
     return (
+      
         <div>
+                  <Helmet>
+        <title>My List</title>
+    </Helmet>
             <h1 className="lg:text-3xl text-center my-[120px] md:text-2xl text-xl font-bold">My List  </h1>
         
      

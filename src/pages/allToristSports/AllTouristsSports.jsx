@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Helmet } from "react-helmet-async";
 import { Link, useLoaderData } from "react-router-dom";
 
 
@@ -18,6 +19,9 @@ const AllTouristsSports = () => {
   }
   return (
     <div>
+              <Helmet>
+        <title>All Tourists</title>
+    </Helmet>
       <div>
         <h1 className="lg:text-3xl text-center my-[100px] md:text-2xl text-xl font-bold">Tourists Spots Section </h1>
         <div  className="flex justify-center items-center mb-20">

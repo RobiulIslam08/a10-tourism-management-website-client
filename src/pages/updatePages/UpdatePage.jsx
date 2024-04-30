@@ -3,6 +3,7 @@ import Swal from "sweetalert2";
 
 import {  useState } from "react";
 import { useLoaderData } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 const UpdatePage = () => {
     const lodedUser = useLoaderData()
     const [country, setCountry] = useState("Bangladesh");
@@ -51,6 +52,9 @@ const UpdatePage = () => {
       }
     return (
         <div>
+                    <Helmet>
+        <title>Update page</title>
+    </Helmet>
             <h1 className="lg:text-3xl text-center my-[120px]  md:text-2xl text-xl font-bold">Update Tourists Spots</h1>
             <div className="hero  ">
                 <div className="hero-content ">

@@ -21,6 +21,7 @@ import AddTouristProtected from './privetRoute/AddTouristProtected';
 import MyListProtected from './privetRoute/MyListProtected';
 import ViewDateailsProtected from './privetRoute/ViewDateailsProtected';
 import UpdatePage from './pages/updatePages/UpdatePage';
+import { HelmetProvider } from 'react-helmet-async';
 
 const router = createBrowserRouter([
   {
@@ -74,8 +75,10 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <AuthProviders>
+   <HelmetProvider>
+   <AuthProviders>
       <RouterProvider router={router} />
     </AuthProviders>
+   </HelmetProvider>
   </React.StrictMode>,
 )
