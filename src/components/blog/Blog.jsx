@@ -1,4 +1,4 @@
-import { Fade, Flip, Hinge, JackInTheBox } from "react-awesome-reveal";
+import {  JackInTheBox } from "react-awesome-reveal";
 
 
 const Blog = () => {
