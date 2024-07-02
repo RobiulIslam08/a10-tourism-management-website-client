@@ -4,7 +4,7 @@
 ` https://a10-tourism-management-websit.web.app`
 ---
 ### featured
-- navbar: The navbar will be present on all pages.  
+- Responsive Design: The website is fully responsive and works seamlessly across mobile, tablet, and desktop devices, ensuring a consistent user experience on all platforms.
 - add tourists spot page: This page has been created so that user data can be added dynamically.  
 - detail page: When the user clicks the View Details button it takes
 the user to the  Details page. This page will be a protected route
