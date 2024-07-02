@@ -5,11 +5,8 @@
 ---
 ### featured
 - Responsive Design: The website is fully responsive and works seamlessly across mobile, tablet, and desktop devices, ensuring a consistent user experience on all platforms.
-- add tourists spot page: This page has been created so that user data can be added dynamically.  
-- detail page: When the user clicks the View Details button it takes
-the user to the  Details page. This page will be a protected route
-and  the private route moves to the login page if the user is
-not logged in.
+- User Authentication: Users can register and log in using email/password or social login options (Google, GitHub/Facebook/Twitter). The site includes private/protected routes for adding and managing tourist spots.  
+- Tourist Spot Management: Users can view, add, update, and delete tourist spots. Each spot has detailed information including image, name, location, description, average cost, seasonality, and more.
 
 - login page: This page has been created for login
 - register page: This page to create a new account.
